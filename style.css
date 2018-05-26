@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Sunflower:300,500,700');
+body{
+    margin: 0;
+    padding:0;
+    font-family: 'Sunflower', sans-serif;
+    background: url('img/light-grey-terrazzo.png');
+
+;
+}
+.topbar{
+    display: flex;
+    height: 8vh;
+    background: #BDBDBD;
+}
+.topbar .search{
+    flex: 1;
+}
+.topbar .filter{
+    flex:2;
+}
+.search{
+    margin: 1em;
+}
+#beerTitle{
+    outline: none;
+    border: none;
+    width: 100%;
+    max-width: 500px;
+    padding: 0.5em 0 0.5em 1em;
+    border-radius: 2px 0 0 2px;
+    box-shadow: 1px 1px 3px 0 #3331bdb8;
+    transition: 0.35s ease-in-out;
+}
+#beerTitle:active , #beerTitle:focus{
+    box-shadow: 1px 1px 8px 0 #3331bdb8;
+
+}
+.filter ul li{
+    display: inline;
+    font-family: 'Sunflower', sans-serif;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    color: black;
+    transition: 0.35s ease-in-out;
+}
+.filter ul li:hover{
+    color: #210e73;
+    cursor: pointer;
+}
+
+/*COntent*/
+.content{
+    contain: content;
+    margin-bottom: 5em;
+}
+.card {
+    width: 20vw;
+    display: inline-block;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 0 #0000005c;
+    margin: 1em;
+    padding: 0.2em 1em 1em 1em;
+    transition: 0.35s ease-in-out;
+    cursor: pointer;
+    background: #f5f5f5;
+}
+.card:hover{
+    box-shadow: 0 0 6px 0 #000000c9;
+
+}
+.fine_details {
+    display: flex;
+}
+p#ibu, p#abv, p#id {
+    margin: 0;
+    font-weight: 300;
+    padding: 0 1em;
+    font-size: 14px;
+    flex: 1;
+}
+img{
+    width: 300px;
+}
+.beer_name{
+    text-align: center;
+    font-size: 2em;
+    padding: 0.5em 0;
+}
+.other_details {
+    display: flex;
+}
+p.beer_style {
+    flex: 3;
+}
+p.ounces {
+    flex: 1;
+}
+p.beer_style, p.ounces {
+    margin: 0;
+    font-weight: 300;
+    font-size: 15px;
+}
+.initial p{
+    font-size: 5em;
+    color: #865102;
+}
+.initial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+#searching{
+    font-size: 3em;
+    color: #616161;
+    animation:blinkingText 2s infinite;
+
+}
+@keyframes blinkingText{
+    0%{		color: #616161;	}
+    25%{	color: transparent;	}
+    50%{	color: #616161;	}
+    75%{	color:transparent;	}
+    100%{	color: #616161;	}
+}
+.footer{
+    background: #BDBDBD;
+    height: 7vh;
+    bottom: 0;
+    width: 100vw;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

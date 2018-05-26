@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beer Search</title>
+    <script src="js/angular.min.js"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/myJs.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="beer_search" ng-controller="myCntrl">
+    <div >
+        <div class="topbar">
+            <div class="search">
+                <input type="text" placeholder="Search for different types of Beers ..." id="beerTitle" ng-model="beerTitle" ng-change="suggestion()">
+            </div>
+            <div class="filter" ng-show="data">
+                <ul>
+                    <li ng-click="orderByMe('abv')">ABV</li>
+                    <li ng-click="orderByMe('ibu')">IBU</li>
+                    <li ng-click="orderByMe('id')">ID</li>
+                    <li ng-click="orderByMe('name')">Name</li>
+                    <li ng-click="orderByMe('style')">Style</li>
+                    <li ng-click="orderByMe('ounces')">Ounce</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="initial" ng-hide="data">
+                <p ng-hide="searching">Welcome to Beer Encyclopedia!!!</p>
+                <p ng-show="searching" id="searching">Searching for that awesome beer...</p>
+            </div>
+            <div class="card" ng-repeat="option in data | filter:beerTitle  | limitTo:limit |  orderBy:myOrderBy">
+                <div class="fine_details">
+                    <p id="ibu">IBU : {{option["ibu"]}}</p>
+                    <p id="abv">ABV: {{option["abv"]}}</p>
+                    <p id="id">ID : {{option["id"]}}</p>
+                </div>
+                <div class="beer_name">
+                    {{option["name"]}}
+                </div>
+                <div class="other_details">
+                    <p class="beer_style">Style : {{option["style"]}}</p>
+                    <p class="ounces">Ounces : {{option["ounces"]}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="creater">Made with ♥</div>
+        </div>
+</div>
+</body>
+</html>
