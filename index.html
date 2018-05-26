@@ -31,7 +31,7 @@
                 <p ng-hide="searching">Welcome to Beer Encyclopedia!!!</p>
                 <p ng-show="searching" id="searching">Searching for that awesome beer...</p>
             </div>
-            <div class="card" ng-repeat="option in data | filter:beerTitle  | limitTo:limit |  orderBy:myOrderBy">
+            <div class="card" ng-repeat="option in data | filter:beerTitle  | limitTo:20 |  orderBy:myOrderBy">
                 <div class="fine_details">
                     <p id="ibu">IBU : {{option["ibu"]}}</p>
                     <p id="abv">ABV: {{option["abv"]}}</p>
